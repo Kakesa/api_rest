@@ -8,7 +8,4 @@ router.post('/signup', userController.signup);
 router.post('/login', userController.login);
 
 
-
-
-
-module.exports = router; // Export the router instance for use in other filesconst userController = require('../controllers/user'); // Import the user controller
+module.exports = router; // Export the router instance for use in other files
