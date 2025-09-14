@@ -1,5 +1,7 @@
-const http = require('http');
-const app = require('./app');
+const http = require('http'); // Importation du module http de Node.js
+const app = require('./app');// Importation de l'application Express
+
+// Normalisation du port
 
 const normalizePort = val => {
   const port = parseInt(val, 10);
@@ -12,6 +14,8 @@ const normalizePort = val => {
   }
   return false;
 };
+
+// Définition du port d'écoute
 const port = normalizePort(process.env.PORT ||'3000');
 app.set('port', port);
 
@@ -34,7 +38,7 @@ const errorHandler = error => {
       throw error;
   }
 };
-
+// Création du serveur HTTP
 const server = http.createServer(app);
 
 server.on('error', errorHandler);
@@ -44,4 +48,5 @@ server.on('listening', () => {
   console.log('Listening on ' + bind);
 });
 
+// Démarrage du serveur
 server.listen(port);
