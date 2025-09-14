@@ -73,9 +73,9 @@ exports.getAllThings = (req, res) => {
         .then(things => res.status(200).json(things))
         .catch(error => res.status(400).json({ error }));
 };
-// controllers/thingController.js
+// Récupérer les objets de l'utilisateur connecté
 exports.getMyThings = (req, res) => {
-  Thing.find({ userId: req.auth.userId })
+  Thing.find({ userId: req.auth.userId }) // filtre sur userId
     .then(things => res.status(200).json(things))
     .catch(error => res.status(400).json({ error }));
 };
