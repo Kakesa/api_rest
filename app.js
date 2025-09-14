@@ -7,7 +7,7 @@ const path = require('path'); // Importation du module path de Node.js
 
 // Connexion à MongoDB
 //mongodb+srv://espoirkakesa2:JehovahDieu1@cluster0.9dujdei.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-mongoose.connect('mongodb://localhost:27017/api_rest', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/jstore', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch((err) => console.error('Connexion à MongoDB échouée !', err));
 
