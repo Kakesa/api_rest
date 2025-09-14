@@ -73,3 +73,9 @@ exports.getAllThings = (req, res) => {
         .then(things => res.status(200).json(things))
         .catch(error => res.status(400).json({ error }));
 };
+// controllers/thingController.js
+exports.getMyThings = (req, res) => {
+  Thing.find({ userId: req.auth.userId })
+    .then(things => res.status(200).json(things))
+    .catch(error => res.status(400).json({ error }));
+};

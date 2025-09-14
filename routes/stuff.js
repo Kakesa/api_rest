@@ -17,5 +17,7 @@ router.put('/:id', auth, multer, staffController.modifyThing);
 router.delete('/:id', auth, staffController.deleteThing);
 // Define a route to get all things from the database
 router.get('/', auth, staffController.getAllThings);
+// Define a route to get all things created by the authenticated user
+router.get('/mythings', auth, staffController.getMyThings);
 
 module.exports = router; // Export the router instance for use in other files
